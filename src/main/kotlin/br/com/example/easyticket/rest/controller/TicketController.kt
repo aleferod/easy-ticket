@@ -23,6 +23,6 @@ class TicketController (val service: TicketService){
     fun update(@RequestBody ticketDto: TicketDto) = ResponseEntity.ok(service.save(ticketDto))
 
     @DeleteMapping
-    fun remove(@RequestBody ticketDto: TicketDto) = ResponseEntity.ok(service.remove(ticketDto))
+    fun remove(@RequestParam id: String) = ResponseEntity.ok(service.remove(id))
 
 }

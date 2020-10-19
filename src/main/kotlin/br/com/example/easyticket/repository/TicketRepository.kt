@@ -8,4 +8,6 @@ import java.util.*
 @Repository
 interface TicketRepository : MongoRepository<Ticket, Long> {
     fun findByDocumento(documento: String) : Optional<Ticket>
+
+    fun findById(id: String) : Optional<Ticket>
 }
