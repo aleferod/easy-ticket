@@ -5,6 +5,7 @@ import br.com.example.easyticket.entity.Ticket
 import br.com.example.easyticket.rest.service.TicketService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import javax.websocket.server.PathParam
 
 @RestController
 @RequestMapping("/ticket")
@@ -17,12 +18,12 @@ class TicketController (val service: TicketService){
     fun findAll() = ResponseEntity.ok(service.findAll())
 
     @GetMapping("/document")
-    fun findByDocument(@RequestParam document: String) = ResponseEntity.ok(service.findByDocument(document))
+    fun findByDocument(@PathParam("documento") document: String) = ResponseEntity.ok(service.findByDocument(document))
 
     @PutMapping
     fun update(@RequestBody ticketDto: TicketDto) = ResponseEntity.ok(service.save(ticketDto))
 
     @DeleteMapping
-    fun remove(@RequestParam id: String) = ResponseEntity.ok(service.remove(id))
+    fun remove(@PathParam("id") id: String) = ResponseEntity.ok(service.remove(id))
 
 }
