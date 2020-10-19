@@ -7,8 +7,9 @@ import br.com.example.easyticket.repository.TicketRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.stereotype.Repository
+import org.springframework.stereotype.Service
 
-@Component
+@Service
 class TicketService (val repository: TicketRepository){
 
     fun save(ticketDto: TicketDto) : Ticket = repository.save(TicketDtoToTicketEntity.convert(ticketDto))
