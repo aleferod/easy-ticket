@@ -17,9 +17,10 @@ class TicketService (val repository: TicketRepository){
 
     fun findByDocument(document: String) = repository.findByDocumento(document)
 
-    fun remove(id: String) {
+    fun remove(id: String) : Ticket {
         val ticket : Ticket = repository.findById(id).orElseThrow( { Exception("Ticket não encontrado com o id " + id)} )
         repository.delete(ticket)
+        return ticket
     }
 
 }
