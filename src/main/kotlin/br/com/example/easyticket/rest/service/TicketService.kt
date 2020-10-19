@@ -11,18 +11,12 @@ import org.springframework.stereotype.Repository
 @Component
 class TicketService (val repository: TicketRepository){
 
-    fun save(ticketDto: TicketDto){
-        repository.save(TicketDtoToTicketEntity.convert(ticketDto))
-    }
+    fun save(ticketDto: TicketDto) : Ticket = repository.save(TicketDtoToTicketEntity.convert(ticketDto))
 
-    fun findAll(){
-        repository.findAll()
-    }
-    fun findByDocument(document: String) {
-        repository.findByDocumento(document)
-    }
+    fun findAll() = repository.findAll()
 
-    fun remove(ticketDto: TicketDto){
-        repository.delete(TicketDtoToTicketEntity.convert(ticketDto))
-    }
+    fun findByDocument(document: String) = repository.findByDocumento(document)
+
+    fun remove(ticketDto: TicketDto) = repository.delete(TicketDtoToTicketEntity.convert(ticketDto))
+
 }

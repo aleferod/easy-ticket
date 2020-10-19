@@ -6,6 +6,7 @@ import br.com.example.easyticket.entity.Ticket
 import org.springframework.util.StringUtils
 import java.security.MessageDigest
 import java.time.LocalDateTime
+import java.util.*
 
 class TicketDtoToTicketEntity {
 
@@ -26,14 +27,7 @@ class TicketDtoToTicketEntity {
 
         fun convertStringToLocalDateTime(param: String) : LocalDateTime = LocalDateTime.parse(param)
 
-        fun generateId() : String {
-            val bytes = this.toString().toByteArray()
-            val md = MessageDigest.getInstance("SHA-256")
-            val digest = md.digest(bytes)
-            return digest.fold("", { str, it -> str + "%02x".format(it) })
-        }
-
-
+        fun generateId() : String = UUID.randomUUID().toString();
     }
 
 
