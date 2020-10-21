@@ -1,0 +1,12 @@
+############## Mongo-DB Setup ############
+
+- Acessar local onde o Mongo-DB esta sendo executado 
+
+  Executar os comandos: 
+   
+      *mongo admin 
+	  *use easy-ticket
+	  *exit
+	  *mongo admin create-easy-admin-user.js
+	  *mongo easy-ticket  --username easyadmin --password dev1234 create-ticket-collection.js
+	   

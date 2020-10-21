@@ -1,7 +1,3 @@
-mongo admin
-
-use easy-ticket
-
 db.createUser(
   {
     user: "easyadmin",
@@ -10,5 +6,5 @@ db.createUser(
   }
 )
 
-exit
+
 
