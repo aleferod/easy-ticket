@@ -1,18 +1,15 @@
 package br.com.example.easyticket.entity
 
-import org.hibernate.annotations.GenericGenerator
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Document(collection = "ticket")
-data class Ticket (
+data class Ticket(
         @Id
-        val id: String,
-        val nome: String ,
+        val id: String?,
+        val nome: String,
         val sobreNome: String,
         val tipoDocumento: String,
         val documento: String,
