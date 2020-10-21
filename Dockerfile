@@ -1,5 +1,6 @@
-FROM openjdk:11.0.8-jre-slim-stretch
+FROM openjdk:11.0.8
 MAINTAINER alefe-dev
-ADD easy-ticket-0.1.0-SNAPSHOT.jar app.jar
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} easy-ticket-0.1.0-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","app.jar"]
 EXPOSE 8080
