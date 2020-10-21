@@ -15,13 +15,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 class SwaggerConfiguration {
 
     @Bean
-    fun api(): Docket {
-        return Docket(DocumentationType.SWAGGER_2)
+    fun api(): Docket = Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .paths(PathSelectors.any())
                 .apis(RequestHandlerSelectors.basePackage("br.com.example.easyticket.rest.controller"))
                 .build()
-    }
 
     fun apiInfo(): ApiInfo = ApiInfoBuilder().title("Easy Ticket API").description("Documentação da API Easy Ticket").build();
 
