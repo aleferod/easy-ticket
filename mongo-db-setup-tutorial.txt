@@ -4,9 +4,13 @@
 
   Executar os comandos: 
    
-      *mongo admin 
-	  *use easy-ticket
-	  *exit
-	  *mongo admin create-easy-admin-user.js
-	  *mongo easy-ticket  --username easyadmin --password dev1234 create-ticket-collection.js
+     mongo admin
+	  
+	 use easy-ticket
+	 
+	 exit
+	 
+	 mongo admin create-easy-admin-user.js
+	 
+	 mongo easy-ticket create-ticket-collection.js
 	   
