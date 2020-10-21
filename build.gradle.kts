@@ -25,9 +25,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	//Swagger2
-	compileOnly("io.springfox:springfox-swagger2:2.9.2")
-	compileOnly("io.springfox:springfox-swagger-ui:2.9.2")
-	compileOnly("io.springfox:springfox-bean-validators:2.9.2")
+	implementation("io.springfox:springfox-swagger2:2.9.2")
+	implementation("io.springfox:springfox-swagger-ui:2.9.2")
+	implementation("io.springfox:springfox-bean-validators:2.9.2")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
