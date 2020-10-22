@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  app:
+    image: easy-ticket
+    ports:
+      - 8080:8080   
+    network_mode: "host"
+    environment:
+       - SERVER_PORT=8080
+       - MONGODB_DATABASE=admin
+       - MONGODB_HOST=localhost
+       - MONGODB_PORT=27017
+       - MONGODB_USERNAME=root
+       - MONGODB_PASSWORD=dev1234
+
+
+
